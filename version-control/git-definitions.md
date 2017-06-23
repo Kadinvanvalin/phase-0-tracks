@@ -1,4 +1,5 @@
 # Git Definitions
+`minor change`
 
 **Instructions: ** Define each of the following Git concepts.
 
