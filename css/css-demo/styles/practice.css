@@ -10,3 +10,9 @@ section#contact-info p{
 ul.smaller{
 	font-size: .8em;
 }
+section#work-experience ul:hover{
+	background-color: mistyrose;
+}
+section#work-experience section:first-of-type{
+	background-color: purple;
+}
