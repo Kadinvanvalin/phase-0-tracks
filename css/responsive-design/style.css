@@ -45,3 +45,26 @@ figcaption {
   font-style: italic;
   text-align: right;
 }
+@media screen and (max-width:700px) {
+  #external-links{
+  display:block;
+  width:100%;
+
+}
+#external-links ul li{
+  display:inline-block;
+  margin:20px;
+}
+}
+@media screen and (max-width: 300px){
+  img, figcaption{
+    display:none;
+  }
+  
+}
+
+/* @media screen and (max-width: 500px) {
+  body {
+    background-color: hotpink;
+  }
+} */
