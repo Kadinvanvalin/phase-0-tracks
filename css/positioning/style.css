@@ -1,0 +1,39 @@
+section{
+
+}
+
+#octopus{
+	display: block;
+	margin:auto;
+	margin-top: 200px;
+
+	
+	
+	z-index: -1;
+	
+}
+#hat{
+	display: block;
+	margin:auto;
+
+	margin-top: 200px;
+	
+	z-index: 1;
+	position: relative;
+	top:-550px;
+	left: 0px;
+	transform: rotate(-10deg);
+	
+}
+#glasses{
+	display: block;
+	margin:auto;
+
+	margin-top: 200px;
+	
+	z-index: 1;
+	position: relative;
+	top:-753px;
+	left: 8px;
+	transform: rotate(-1deg);
+}
