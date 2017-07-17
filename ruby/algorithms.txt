@@ -1,0 +1,44 @@
+When approaching an elevator, ask the master. "Up or down Master?"
+
+if master says Up
+	press the button with the up arrow.
+if master says down
+	press the button with the down arrow
+else 	
+	Random apology
+
+if door open and you pushed the button
+	
+	put robot hand next to the elevator door frame closest to where the door went into and say "After you Master."
+
+if master walks into the elevator, 
+	stand by the row of buttons and don't let anyone else push them
+
+else 
+	say "arent we going in?"
+
+query the master "What floor master?"
+
+if the response is a number press the button with the corresponding number
+
+if the display, shows the number the master stated earlier 
+	put robot hand next to the elevator door frame closest to where the door went into and say "After you Master."
+
+Feeding my cat
+
+IF cat is meowing pitifully 
+	look at cats food and water dish
+
+		if food bowl is empty
+			open food container.
+			put food from container into cat bowl
+			return happy cat
+		elif water bowl is empty
+			pick dish up
+			walk over to sink
+			put dish under faucet
+			turn faucet on
+			put water dish back where I first picked it up
+			return happy cat
+		else
+			return happy cat	
