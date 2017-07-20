@@ -34,7 +34,7 @@ def process_Multiple int
 
       like_garlic_bool = bool_converter(like_garlic)  
       insurance_bool = bool_converter(insurance)  
-      if employee_name == "Drake Cula" || "Tu Fang"
+      if employee_name == "Drake Cula" || employee_name == "Tu Fang"
         
         puts "#{employee_name} is Definitely a Vampire"
       elsif age.to_i > 100 && !like_garlic_bool && !insurance_bool
@@ -47,8 +47,9 @@ def process_Multiple int
         puts "Results inconclusive for #{employee_name}"
       end
   end
+   i += 1
 end
- i += 1
+
 end
 
 
