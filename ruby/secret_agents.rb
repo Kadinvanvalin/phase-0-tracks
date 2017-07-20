@@ -1,3 +1,5 @@
+
+#look at the first char in a string, call the next method, save that char, repeat until no more chars left
 def encrypt string
 	counter = 0
 	result = ""
@@ -9,7 +11,8 @@ def encrypt string
 end
 
 
-
+#look at the first char in a string, find the index of that char in the alphabet, remove one from that index
+#save that letter repeat
 def decrypt string
 	counter = 0
 	result = ""
@@ -20,7 +23,8 @@ def decrypt string
 	end
 	return result
 end
-
+#ask if they want to decrypt or encrypt, keep asking if they answer doesnt make sense
+#ask for a password, decrypt or encrypt the password depending on what they picked
 def interface
 	puts "Do you want to encrypt or decrypt a password?"
 	input = gets.chomp
