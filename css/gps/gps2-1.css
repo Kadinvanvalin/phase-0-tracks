@@ -1,3 +1,35 @@
-html{
-	background-color: blue;
+body{
+  margin:auto;
+  width:960px;
+  font-family: "Times New Roman", Times, serif;
+}
+header {
+  background-color: grey;
+  text-align: center;
+  border: solid 10px purple;
+  border-radius:10px;
+  margin:10px;
+}
+footer {
+  margin:10px;
+  display:block;
+  height:50px;
+  text-align: center;
+  background-color: blue;
+}
+a{
+  color:black;
+}
+.column-1 {
+  background-color: mistyrose;
+}
+.column-2 {
+  background-color: goldenrod;
+}
+.column-1, .column-2 {
+  margin:auto;
+  padding:30px;
+  display: inline-block;
+  width: 43%;
+  vertical-align: top;
 }
