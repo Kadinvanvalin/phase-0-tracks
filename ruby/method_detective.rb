@@ -13,7 +13,7 @@ p "zom".sub(/[o]/, "oo")
 p "enhance".center(15)
 # => "    enhance    "
 
-p "Stop! You’re under arrest!".upcase
+p "Stop! You\'re under arrest!".upcase
 #.force_encoding(Encoding::UTF_8)
 
 # => "STOP! YOU’RE UNDER ARREST!"
