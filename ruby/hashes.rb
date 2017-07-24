@@ -11,4 +11,7 @@
 # 		ler the user update a key
 # print latest, exit		
 
-
+puts "What is the clients name?"
+puts "What is the clients age?"
+puts "How many children does the client have?"
+puts "How would you describe the clients style? please seperate each item by a \",\" "
