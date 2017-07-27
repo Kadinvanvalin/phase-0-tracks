@@ -20,3 +20,25 @@ p search_array(arr, 89)
 p search_array(arr, 1)
 
 p search_array(arr, 24)
+
+
+def fib(int) 
+	if int == 0
+		return nil
+	elsif int == 1
+		return [0]
+	elsif int == 2
+		return [0,1]
+	end
+	int = int - 2
+	array = [0,1]
+	 	 while int > 0
+	 	 	array << array[-1] + array[-2]
+	 	 	int -= 1
+	 	 end
+	 	 return array
+end
+
+p fib(100)[-1] == 218922995834555169026
+
+
