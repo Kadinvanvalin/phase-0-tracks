@@ -46,5 +46,5 @@ full_name = gets.chomp
 first_name = full_name.split(" ")[0]
 last_name = full_name.split(" ")[1]
 # last_name = gets.chomp
- p encode(first_name) + " " + encode(last_name)
- p first_name
+ p "#{full_name} is known as #{encode(last_name)} #{encode(first_name)}"
+ 
