@@ -95,34 +95,34 @@
 			
 # 	end
 
-# end
-# def bubblesort ary, new_array
-# 	i = 0
-# 	if ary.length == 0
-# 		return new_array
-# 	else
-# 		ary.each do |number|
-			
-			
-# 			puts i
-# 			next_number = ary[i+1]
-# 			if next_number == nil
-# 				p new_array
-# 				p ary
-# 				return bubblesort ary, new_array << ary.pop
-			
-
-# 			elsif number < ary[i+1]
-# 				ary[i+1] = number
-# 				ary[i] = next_number
-# 			end
-# 			i+=1
-
-
-# 		end
-# 	end
-
 #end
+def bubblesort ary, new_array
+	i = 0
+	if ary.length == 0
+		return new_array
+	else
+		ary.each do |number|
+			
+			
+			puts i
+			next_number = ary[i+1]
+			if next_number == nil
+				p new_array
+				p ary
+				return bubblesort ary, new_array << ary.pop
+			
+
+			elsif number < ary[i+1]
+				ary[i+1] = number
+				ary[i] = next_number
+			end
+			i+=1
+
+
+		end
+	end
+
+end
 
 def insertsort(array)
 	new_array= []
