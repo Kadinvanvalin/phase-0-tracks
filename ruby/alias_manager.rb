@@ -10,13 +10,31 @@
 #add uppercase to name
 #return encrypted name into has with real name
 #print name
+def check_char char
+	vowel=["a", "e", "i", "o", "u"]
+	consonant=["b","c","d","f","g","h","j","k","l","m","n","p","q","r","s","t","v","w","x","y","z"]
+	if vowel.include?(char)
+		return vowel
+	elsif consonant.include?(char)
+		return consonant
+	else
+		puts "you entered an invalid char value."
+	end
+			
+end
 
-vowel=["a", "e", "i", "o", "u"]
-consonant=["b","c","d","f","g","h","j","k","l","m","n","p","q","r","s","t","v","w","x","y","z"]
+def change_char array, char
+	array.at(array.index(char)+1)
+	
+end
+
 
 def encode name
-	array = name.chars
-	p array
+	array = name.downcase.chars
+	array.map do |char|
+		change_char(check_char(char), char)
+	end.join
+
 end
 
 
@@ -27,4 +45,4 @@ puts "Please enter your first name."
 first_name = gets.chomp
 # puts "Please enter your last name."
 # last_name = gets.chomp
-encode first_name
+ p encode first_name
