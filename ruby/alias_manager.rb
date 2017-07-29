@@ -38,13 +38,16 @@ def encode name
 end
 
 
-
-
-
-puts "Please enter your first and last name."
-full_name = gets.chomp
-first_name = full_name.split(" ")[0]
-last_name = full_name.split(" ")[1]
-# last_name = gets.chomp
- p "#{full_name} is known as #{encode(last_name)} #{encode(first_name)}"
+full_name = nil
+until full_name == "quit"
+		puts "Alias_Manager 1.0::Please enter your first and last name. Type quit to exit...."
+		full_name = gets.chomp
+	if full_name == "quit"
+		puts "Alias_Manager 1.0::Thank you, goodbye"
+	else
+		first_name = full_name.split(" ")[0]
+		last_name = full_name.split(" ")[1]
+ 		puts "Alias_Manager 1.0::#{full_name} is known as #{encode(last_name)} #{encode(first_name)}"
+	end
+end
  
