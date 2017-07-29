@@ -10,6 +10,7 @@
 #add uppercase to name
 #return encrypted name into has with real name
 #print name
+all_names={}
 def check_char char
 	vowel=["a", "e", "i", "o", "u"]
 	consonant=["b","c","d","f","g","h","j","k","l","m","n","p","q","r","s","t","v","w","x","y","z"]
@@ -36,17 +37,25 @@ def encode name
 	end.join.capitalize
 
 end
-
+def printout hash
+	hash.each do |key, value|
+		puts "#{key.to_s} is also known as #{value[0]} #{value[1]}"
+	end
+end
 
 full_name = nil
 until full_name == "quit"
 		puts "Alias_Manager 1.0::Please enter your first and last name. Type quit to exit...."
 		full_name = gets.chomp
 	if full_name == "quit"
+		puts "Alias_Manager 1.0:: Full Print Out::"
+		puts "______________________________________"
+		printout all_names
 		puts "Alias_Manager 1.0::Thank you, goodbye"
 	else
 		first_name = full_name.split(" ")[0]
 		last_name = full_name.split(" ")[1]
+		all_names[full_name.to_sym] = [encode(last_name), encode(first_name)]
  		puts "Alias_Manager 1.0::#{full_name} is known as #{encode(last_name)} #{encode(first_name)}"
 	end
 end
