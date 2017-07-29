@@ -33,7 +33,7 @@ def encode name
 	array = name.downcase.chars
 	array.map do |char|
 		change_char(check_char(char), char)
-	end.join
+	end.join.capitalize
 
 end
 
@@ -41,8 +41,10 @@ end
 
 
 
-puts "Please enter your first name."
-first_name = gets.chomp
-# puts "Please enter your last name."
+puts "Please enter your first and last name."
+full_name = gets.chomp
+first_name = full_name.split(" ")[0]
+last_name = full_name.split(" ")[1]
 # last_name = gets.chomp
- p encode first_name
+ p encode(first_name) + " " + encode(last_name)
+ p first_name
