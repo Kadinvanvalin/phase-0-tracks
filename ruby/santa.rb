@@ -3,9 +3,12 @@ class Santa
 		p "Initializing Santa Instance"
 		@gender = gender
 		@ethnicity = ethnicity
+		@reindeer_ranking = ["Rudolph", "Dasher", "Dancer", "Prancer", "Vixen", "Comet", "Cupid", "Donner", "Blitzen"]
+		@age = 0 
 	end
-	@reindeer_ranking = ["Rudolph", "Dasher", "Dancer", "Prancer", "Vixen", "Comet", "Cupid", "Donner", "Blitzen"]
-	@age = 0 
+
+
+	
 	def speak
 		p "Ho, ho ho! Happy holidays!"
 	end
@@ -18,7 +21,25 @@ class Santa
 		p "Hello, I am  #{@gender}. I Identify as #{@ethnicity}, and I am a Santa"
 	end
 
-	
+	def celebrate_birthday
+		@age += 1
+	end
+
+	def get_mad_at(bad_reindeer)
+		puts "this is a list of my deer #{@reindeer_ranking}"
+		@reindeer_ranking.insert(-1, @reindeer_ranking.delete_at(@reindeer_ranking.index(bad_reindeer)))
+			puts @reindeer_ranking
+	end
+	def gender=(new_gender)
+		@gender = new_gender
+	end
+
+	def age
+		@age
+	end
+	def ethnicity
+		@ethnicity
+	end
 end
 
 def make_some_santa(gender, ethnicity, array_of_santa)
@@ -42,18 +63,18 @@ def sound_off(array_of_santa)
 end
 
 
-example_genders = ["agender", "female", "bigender", "male", "female", "gender fluid", "N/A"]
-example_ethnicities = ["black", "Latino", "white", "Japanese-African", "prefer not to say", "Mystical Creature (unicorn)", "N/A"]
+# example_genders = ["agender", "female", "bigender", "male", "female", "gender fluid", "N/A"]
+# example_ethnicities = ["black", "Latino", "white", "Japanese-African", "prefer not to say", "Mystical Creature (unicorn)", "N/A"]
 
 
-example_santa = make_some_santa(example_genders, example_ethnicities, [])
+# example_santa = make_some_santa(example_genders, example_ethnicities, [])
 
-sound_off(example_santa)
+# sound_off(example_santa)
 
-puts example_santa
 
-# Tim_Allen = Santa.new("agender", "black")
 
+Tim_Allen = Santa.new("agender", "black")
+Tim_Allen.get_mad_at("Dasher")
 # Tim_Allen.speak
 # Tim_Allen.eat_milk_and_cookies("gingerbread cookie")
 
