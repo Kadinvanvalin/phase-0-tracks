@@ -1,4 +1,6 @@
 class Santa
+	attr_reader  :age, :ethnicity
+	attr_accessor :gender
 	def initialize(gender, ethnicity)
 		p "Initializing Santa Instance"
 		@gender = gender
@@ -30,16 +32,7 @@ class Santa
 		@reindeer_ranking.insert(-1, @reindeer_ranking.delete_at(@reindeer_ranking.index(bad_reindeer)))
 			puts @reindeer_ranking
 	end
-	def gender=(new_gender)
-		@gender = new_gender
-	end
-
-	def age
-		@age
-	end
-	def ethnicity
-		@ethnicity
-	end
+	
 end
 
 def make_some_santa(gender, ethnicity, array_of_santa)
