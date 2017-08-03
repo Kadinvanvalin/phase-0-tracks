@@ -75,6 +75,13 @@ end
 
 Tim_Allen = Santa.new("agender", "black")
 Tim_Allen.get_mad_at("Dasher")
+p Tim_Allen.age
+Tim_Allen.celebrate_birthday
+p Tim_Allen.age
+p Tim_Allen.ethnicity
+Tim_Allen.identify_yourself
+Tim_Allen.gender = "new gender"
+Tim_Allen.identify_yourself
 # Tim_Allen.speak
 # Tim_Allen.eat_milk_and_cookies("gingerbread cookie")
 
