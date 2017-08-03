@@ -1,6 +1,6 @@
 class Santa
-	attr_reader  :age, :ethnicity
-	attr_accessor :gender
+	attr_reader :ethnicity,:age
+	attr_accessor :gender  
 	def initialize(gender, ethnicity)
 		p "Initializing Santa Instance"
 		@gender = gender
@@ -65,6 +65,11 @@ def sound_off(array_of_santa)
 	end
 end
 
+def reage_santa(array)
+	array.each do |santa|
+		Random.rand(140).times{santa.celebrate_birthday} 
+	end
+end
 
  example_genders = ["agender", "female", "bigender", "male", "female", "gender fluid", "N/A"]
  example_ethnicities = ["black", "Latino", "white", "Japanese-African", "prefer not to say", "Mystical Creature (unicorn)", "N/A"]
@@ -73,7 +78,17 @@ end
 # example_santa = make_some_santa(example_genders, example_ethnicities, [])
 
 # sound_off(example_santa)
-sound_off(make_this_many_santa(example_genders, example_ethnicities, 1000))
+young_santa = make_this_many_santa(example_genders, example_ethnicities, 1000)
+rand_age_santa = reage_santa(young_santa)
+
+
+rand_age_santa.each do |my_santa|
+
+	p my_santa.age
+	my_santa.identify_yourself
+
+
+end
 
 
 
