@@ -33,6 +33,28 @@ class Hangman
 		if character.length == 1 && character =~ /[a-zA-z]/
 			@guesses -= 1
 			@guessed_characters << character
+		else
+			"that is an incorrect value."
 		end
+	end
+
+	def render
+		to_render = ""
+		@word.split("").each do |real_char|
+			if guessed_characters.length == 0
+				return ("_ " * @word.length).strip
+			else
+				guessed_characters.each do 	|guessed_character|
+					if guessed_character == real_char
+						to_render += guessed_character.upcase
+					else
+						to_render += "_ "
+					end
+				end
+			end
+
+		end
+
+		to_render.strip
 	end
 end

@@ -35,5 +35,20 @@ describe Hangman do
 		mygame.guess(".")
 		expect(mygame.guessed_characters).to eq([])
 	end
+	it "should return a error string for wrong values" do
+		expect(mygame.guess(".")).to eq("that is an incorrect value.")
+	end
+	
+	it "should render jazz as _ _ _ _" do
+		expect(mygame.render).to eq("_ _ _ _")
+	end
+	it "should render jazz with a guess of j as J_ _ _" do
+		mygame.guess("j")
+		expect(mygame.render).to eq("J_ _ _")
+	end
+	it "should render jazz with a guess of z as _ _ ZZ" do
+		mygame.guess("z")
+		expect(mygame.render).to eq("_ _ ZZ")
+	end
 
 end
