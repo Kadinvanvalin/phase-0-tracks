@@ -20,9 +20,15 @@ driver code
 =end
 
 class Hangman
-	attr_reader :word
+
+	attr_reader :word, :guesses
 
 	def initialize(word)
 		@word = word
+		@guesses = word.length + 5
+	end
+
+	def guess(character)
+		@guesses -= 1
 	end
 end
