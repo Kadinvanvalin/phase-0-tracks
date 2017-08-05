@@ -19,3 +19,10 @@ driver code
 
 =end
 
+class Hangman
+	attr_reader :word
+
+	def initialize(word)
+		@word = word
+	end
+end
