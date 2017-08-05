@@ -21,14 +21,18 @@ driver code
 
 class Hangman
 
-	attr_reader :word, :guesses
+	attr_reader :word, :guesses, :guessed_characters
 
 	def initialize(word)
 		@word = word
 		@guesses = word.length + 5
+		@guessed_characters = []
 	end
 
 	def guess(character)
-		@guesses -= 1
+		if character.length == 1 && character =~ /[a-zA-z]/
+			@guesses -= 1
+			@guessed_characters << character
+		end
 	end
 end

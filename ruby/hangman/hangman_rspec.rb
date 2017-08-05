@@ -23,6 +23,17 @@ describe Hangman do
 		mygame.guess("h")
 		expect(mygame.guessed_characters).to eq(["h"])
 	end
-	
+	it "should reject a multichar guess" do
+		mygame.guess("hj")
+		expect(mygame.guessed_characters).to eq([])
+	end
+	it "should not let a rejected guess reduce guesses" do
+		mygame.guess("hj")
+		expect(mygame.guesses).to eq(9)
+	end
+	it "should reject non-alphabet chars" do
+		mygame.guess(".")
+		expect(mygame.guessed_characters).to eq([])
+	end
 
 end
