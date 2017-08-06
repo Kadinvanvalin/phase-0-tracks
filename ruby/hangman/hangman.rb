@@ -27,10 +27,16 @@ class Hangman
 		@word = word
 		@guesses = word.length + 5
 		@guessed_characters = []
+		@letters_left = word.length
+		@game_over = false
+		@won = nil
+		
 	end
 
 	def guess(character)
-		if character.length == 1 && character =~ /[a-zA-z]/
+		if @guessed_characters.include?(character)
+			"You already guessed that"
+		elsif character.length == 1 && character =~ /[a-zA-z]/
 			@guesses -= 1
 			@guessed_characters << character
 		else
@@ -40,21 +46,44 @@ class Hangman
 
 	def render
 		to_render = ""
-		@word.split("").each do |real_char|
-			if guessed_characters.length == 0
-				return ("_ " * @word.length).strip
-			else
-				guessed_characters.each do 	|guessed_character|
-					if guessed_character == real_char
-						to_render += guessed_character.upcase
-					else
-						to_render += "_ "
-					end
-				end
+			@word.split("").each do |real_char|
+				if @guessed_characters.include?(real_char) 
+					to_render += @guessed_characters[@guessed_characters.index(real_char)].upcase
+				else
+					to_render += "_ "
+				end	
 			end
-
-		end
-
 		to_render.strip
 	end
+	def check_game_state
+		@word.split("").each do |real_char|
+				if @guessed_characters.include?(real_char) 
+					@letters_left = @letters_left - 1
+				end
+			end
+		
+		if @letters_left <= 0
+			@won = true
+			@game_over = true
+			p "congrats! You won!"		
+		elsif guesses == 0
+			@won = false
+			@game_over = true
+			p "You didn't get the word"
+		end
+		@letters_left = word.length		
+	end
+
+	def run_game
+		until @game_over
+			guess(gets.chomp)
+			p render
+			 check_game_state
+		end
+	end
 end
+
+p "enter a word for player 2 to guess"
+mygame = Hangman.new(gets.chomp)
+puts "_________________________________\n" * 25
+mygame.run_game
