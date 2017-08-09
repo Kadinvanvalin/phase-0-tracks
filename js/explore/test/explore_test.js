@@ -9,4 +9,18 @@ describe('util tests', function(){
 	it('thisThing should be true', function() {
 			expect(explore.thisThing).to.eq(true)
 	});
+
+
+});
+
+describe('reverse tests', function(){
+
+	it('should be a function', function() {
+			expect(explore.reverse('hello')).to.eq('olleh')
+	});
+	it('thisThing should be true', function() {
+			expect(explore.thisThing).to.eq(true)
+	});
+	
+
 });
