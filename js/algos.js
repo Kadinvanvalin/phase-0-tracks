@@ -1,12 +1,12 @@
-// function findLongestWord(arrayOfWords) {
-// let longestWord = ""; 
-// 	for(let i = 0; i < arrayOfWords.length; i++){
-// 		 if(longestWord.length < arrayOfWords[i].length){
-// 			longestWord = arrayOfWords[i];
-// 		}
-// 	}
-// 	return longestWord;
-// }
+function findLongestWord(arrayOfWords) {
+let longestWord = ""; 
+	for(let i = 0; i < arrayOfWords.length; i++){
+		 if(longestWord.length < arrayOfWords[i].length){
+			longestWord = arrayOfWords[i];
+		}
+	}
+	return longestWord;
+}
 // const array =  ["long phrase","longest phrase","longer phrase"]
 // console.log(findLongestWord(array));
 
@@ -40,15 +40,29 @@
 //  		if I do that I could create seemingly realish words with some rules about how many vowels are included in the word
 function buildArray(lengthOfArray){
 	newArray = [];
-	alphabet = "abcdefghijklmnopqrstuvwxyz"
+	const alphabet = "bcdfghjklmnpqrstvwxyz";
+	const vowels = "aeiou";
 	for(let i = 0; i < lengthOfArray; i++) {
 		myword = "";
 		for(let j = 0; j< (Math.floor(Math.random()*10)+1); j++){
-			myword+= alphabet.substr((Math.floor(Math.random()*26)+1), 1)
+			if(Math.random() > .4){
+				myword+= vowels.substr((Math.floor(Math.random()*5)+1), 1)
+			}
+			else{
+			myword+= alphabet.substr((Math.floor(Math.random()*21)+1), 1)
+	}
 		}
 		newArray.push(myword)
 	}
-	console.log(newArray);
+	return newArray;
 }
 
-buildArray(5)
+function driverCode(lengthOfArray, timesToRun) {
+	for(let i =0; i < timesToRun; i++){
+	 let newArray = buildArray(lengthOfArray);
+	 console.log(newArray);
+	 console.log(findLongestWord(newArray));
+	}
+}
+
+driverCode(10,10)
