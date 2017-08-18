@@ -1,0 +1,26 @@
+SELECT * FROM users
+
+
+SELECT * FROM users, reviews, businesses WHERE users.id = reviews.user_id AND businesses.id  = reviews.user_id;
+
+1|Bradford|Pitt|1|4|The service was great|1|1|1|Grundy Hollow Chapel
+1|Bradford|Pitt|2|1|The service was awful|2|1|1|Grundy Hollow Chapel
+3|Angela|Jolie|3|5|I own this place|1|3|3|The Beagle Nightclub
+1|Bradford|Pitt|4|4|The service was great|1|1|1|Grundy Hollow Chapel
+
+
+SELECT users.first_name, users.last_name, businesses.name, reviews.stars, reviews.comment FROM users, reviews, businesses WHERE users.id = reviews.user_id AND businesses.id  = reviews.user_id;
+
+Bradford|Pitt|Grundy Hollow Chapel|4|The service was great
+Bradford|Pitt|Grundy Hollow Chapel|1|The service was awful
+Angela|Jolie|The Beagle Nightclub|5|I own this place
+Bradford|Pitt|Grundy Hollow Chapel|4|The service was great
+
+SELECT * 
+FROM businesses
+INNER JOIN reviews on reviews.business_id = businesses.id AND businesses.id = 1
+INNER JOIN users on users.id = reviews.user_id
+
+1|Grundy Hollow Chapel|1|4|The service was great|1|1|1|Bradford|Pitt
+1|Grundy Hollow Chapel|3|5|I own this place|1|3|3|Angela|Jolie
+1|Grundy Hollow Chapel|4|4|The service was great|1|1|1|Bradford|Pitt
