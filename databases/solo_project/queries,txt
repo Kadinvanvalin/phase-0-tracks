@@ -1,0 +1,49 @@
+select * from cards;
+|1|What is the ultimate answer|42
+|1|what is my cats name?|Pillows
+|1|why dont you know your cats name?|reasons
+|2|what is your name?|Bob
+
+update cards set answer="I do know his name" where question ="why dont you know your cats name?"
+
+select * from users, cards where users.flashcard_list = cards.list_number;
+
+|Kadin|true|1||1|What is the ultimate answer|42
+|Kadin|true|1||1|what is my cats name?|Pillows
+|Kadin|true|1||1|why dont you know your cats name?|reasons
+|Bob|false|2||2|what is your name?|Bob
+
+
+select users.name, cards.question from users join cards on users.flashcard_list = cards.list_number;
+
+Kadin|What is the ultimate answer
+Kadin|what is my cats name?
+Kadin|why dont you know your cats name?
+Bob|what is your name?
+
+delete from users where name ="Bob"
+
+
+insert into users(name, can_make_cards, flashcard_list) values ("not bob", "false", 3);
+
+sqlite> select *
+   ...> from cards
+   ...> cross join users
+   ...> on users.flashcard_list = cards.list_number;
+|1|What is the ultimate answer|42||Kadin|true|1
+|1|what is my cats name?|Pillows||Kadin|true|1
+|1|why dont you know your cats name?|I do know his name||Kadin|true|1
+sqlite> select *
+   ...> from cards
+   ...> left join users
+   ...> on users.flashcard_list = cards.list_number;
+|1|What is the ultimate answer|42||Kadin|true|1
+|1|what is my cats name?|Pillows||Kadin|true|1
+|1|why dont you know your cats name?|I do know his name||Kadin|true|1
+|2|what is your name?|Bob||||
+sqlite> select *
+   ...> from cards
+   ...> [inner] join users
+   ...> on users.flashcard_list = cards.list_number;
+Error: no such column: cards.list_number
+sqlite>
