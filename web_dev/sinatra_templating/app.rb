@@ -24,4 +24,15 @@ post '/students' do
   redirect '/'
 end
 
+get "/studentsByLocation" do
+	erb :studentsByLocation
+
+end
+#is this the right way to insert values
+post '/form' do
+	db.execute("SELECT * FROM students WHERE location=?", [params['value']] )
+end
+
+
+
 # add static resources
