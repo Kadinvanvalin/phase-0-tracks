@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Students</title>
+</head>
+<body>
+	<ul>
+	<p><%=@students %></p>
+    <% @students.each do |student| %>
+      <li><%= student['name'] %>, <%= student['age'] %></li>
+    <% end %>
+  </ul>
+</body>
+</html>
