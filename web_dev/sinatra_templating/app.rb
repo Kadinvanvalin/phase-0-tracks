@@ -28,9 +28,15 @@ get "/studentsByLocation" do
 	erb :studentsByLocation
 
 end
+
+
+
 #is this the right way to insert values
 post '/form' do
-	db.execute("SELECT * FROM students WHERE location=?", [params['value']] )
+	p params.to_s
+	campus = params[:campus]
+	@students =	db.execute("SELECT * FROM students WHERE campus=?", [campus])
+	erb :display
 end
 
 

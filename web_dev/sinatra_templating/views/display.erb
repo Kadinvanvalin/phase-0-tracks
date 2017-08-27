@@ -5,6 +5,7 @@
 </head>
 <body>
 	<ul>
+	<p><%=@students %></p>
     <% @students.each do |student| %>
       <li><%= student['name'] %>, <%= student['age'] %></li>
     <% end %>
