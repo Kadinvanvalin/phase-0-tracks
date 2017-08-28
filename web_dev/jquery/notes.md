@@ -1,0 +1,1 @@
+I have used jQuery before for event listeners, so I think I will look for more obscure things JQuery can do.I plan on reading a little, playing and testing a lot, then going back to read. 
